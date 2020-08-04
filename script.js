@@ -1,4 +1,7 @@
+
 var qQuestions = [
+
+        
     {
         question: "1. Which of the following best describes an array in JavaScript?", 
         answers: {
@@ -8,7 +11,8 @@ var qQuestions = [
             d: "Variable that only holds integers"
 
         },
-        correctA: "c"
+        correctA: "c",
+        
     },
     {
         question: "2. True or False: The alert() method returns boolean values.",
@@ -49,6 +53,7 @@ var qQuestions = [
         },
         correctA: "a"
     }
+   
 ];
 
 
@@ -68,7 +73,7 @@ function javaScriptQuiz(questions, quizContainer, results, submit) {
             
             for(letter in questions[i].answers){
 
-                // ...add an html radio button
+              
                 answers.push(
                     '<label>'
                         + '<input type="radio" name="question'+i+'" value="'+letter+'">'
@@ -78,15 +83,19 @@ function javaScriptQuiz(questions, quizContainer, results, submit) {
                 );
             }
 
-            // add this question and its answers to the output
-            output.push(
-                '<div class="question">' + questions[i].question + '</div>'
-                + '<div class="answers">' + answers.join('') + '</div>'
-            );
-        }
+       
+                output.push(
+                    '<div class="question">' + questions[i].question + '</div>'
+                    + '<div class="answers">' + answers.join('') + '</div>'
+                );
+
+                }
+                
+                
+                
+        quizContainer.innerHTML = output.join('');
 
         
-        quizContainer.innerHTML = output.join('');
     } ;   
 
 
@@ -109,6 +118,7 @@ function javaScriptQuiz(questions, quizContainer, results, submit) {
                 numCorrect++;
                 answerContainers[i].style.color = 'green';
             }
+
             
             else{
                 answerContainers[i].style.color = 'red';
@@ -116,7 +126,7 @@ function javaScriptQuiz(questions, quizContainer, results, submit) {
         }
 
         
-        results.innerHTML = numCorrect + ' out of ' + questions.length;
+        results.innerHTML = numCorrect + '/' + questions.length;
     }
 
     
@@ -124,12 +134,54 @@ function javaScriptQuiz(questions, quizContainer, results, submit) {
         quizResults(questions, quizContainer, results);
     }
 
+    function Store(event){
+        event.preventDefault()
+        var score = prompt ("Enter your score using a fraction (ex: 4/5):")
+        if(score=== "1/5"){
+            console.log(score);
+            localStorage.setItem("score", JSON.stringify(score))
+        }
+        if(score=== "2/5"){
+            console.log(score);
+            localStorage.setItem("score", JSON.stringify(score));
+        }
+        if(score=== "3/5"){
+            console.log(score);
+            localStorage.setItem("score", JSON.stringify(score));
+        }
+        if(score=== "4/5"){
+            console.log(score);
+            localStorage.setItem("score", JSON.stringify(score));
+        }
+        if(score=== "5/5"){
+            console.log(score);
+            localStorage.setItem("score", JSON.stringify(score));
+        } while(score !== "1/5" || "2/5" || "3/5" || "4/5" || "5/5"){
+            alert("You must enter your score correctly.")
+            score = prompt ("Enter your score using a proportion. (Ex: 4 out of 5):")
+            if(score=== "1/5" || "2/5" || "3/5" || "4/5" || "5/5"){
+                console.log(score);
+                localStorage.setItem("score", JSON.stringify(score))
+        }}
+    var initials = prompt ("Enter your first and last name initials without using periods. (Ex: TJ)")
+        console.log(initials);
+        localStorage.setItem("initials", JSON.stringify(initials))
+    }
+    store.addEventListener("click", Store);
+
+   
+    
+    
     quizOfficial(questions, quizContainer);
+ 
+    
 }
+
+
 
 var quizContainer = document.getElementById('quiz');
 var results = document.getElementById('results');
-var submit = document.getElementById('submit');
-
+var submit = document.getElementById('Submit');
+var store = document.getElementById("store");
 
 javaScriptQuiz(qQuestions, quizContainer, results, submit);
