@@ -14,6 +14,14 @@ The task was to create a timed quiz using JavaScript fundamentals. Once the user
 
 ## Images ##
 ![ScreenShot](https://raw.github.com/tajah93/code-quiz/master/Images/JS_Quiz.png) 
+
+
 ![ScreenShot](https://raw.github.com/tajah93/code-quiz/master/Images/Prompt.png)
+
+
 ![ScreenShot](https://raw.github.com/tajah93/code-quiz/master/Images/Submission.png)
+
+
 ![ScreenShot](https://raw.github.com/tajah93/code-quiz/master/Images/Submission_Mobile.png)
+
+
