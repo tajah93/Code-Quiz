@@ -59,8 +59,19 @@ var qQuestions = [
 
 function javaScriptQuiz(questions, quizContainer, results, submit) {
 
-  
+    
     function quizOfficial(questions, quizContainer){
+
+        var count = 100;
+        var interval = setInterval(function(){
+        document.getElementById('count').innerHTML=count;
+        count--;
+        if (count === 0){
+            clearInterval(interval);
+            document.getElementById('count').innerHTML='Done';
+            alert("Time's up! Submit your quiz and click on the 'Store' button.");
+        }
+        }, 1000);
 
         var output = [];
         var answers;
@@ -100,7 +111,7 @@ function javaScriptQuiz(questions, quizContainer, results, submit) {
 
 
   
-    function quizResults(questions, quizContainer, results){
+        function quizResults(questions, quizContainer, results){
       
         var answerContainers = quizContainer.querySelectorAll('.answers');
       
@@ -126,54 +137,35 @@ function javaScriptQuiz(questions, quizContainer, results, submit) {
         }
 
         
-        results.innerHTML = numCorrect + '/' + questions.length;
+        results.innerHTML = 'Your Score: ' + numCorrect + '/' + questions.length;
     }
 
     
-    submit.onclick = function(){
-        quizResults(questions, quizContainer, results);
-    }
+        submit.onclick = function(){
+            quizResults(questions, quizContainer, results);
+        }
 
-    function Store(event){
-        event.preventDefault()
-        var score = prompt ("Enter your score using a fraction (ex: 4/5):")
-        if(score=== "1/5"){
-            console.log(score);
-            localStorage.setItem("score", JSON.stringify(score))
-        }
-        if(score=== "2/5"){
-            console.log(score);
-            localStorage.setItem("score", JSON.stringify(score));
-        }
-        if(score=== "3/5"){
-            console.log(score);
-            localStorage.setItem("score", JSON.stringify(score));
-        }
-        if(score=== "4/5"){
-            console.log(score);
-            localStorage.setItem("score", JSON.stringify(score));
-        }
-        if(score=== "5/5"){
-            console.log(score);
-            localStorage.setItem("score", JSON.stringify(score));
-        } while(score !== "1/5" || "2/5" || "3/5" || "4/5" || "5/5"){
-            alert("You must enter your score correctly.")
-            score = prompt ("Enter your score using a proportion. (Ex: 4 out of 5):")
-            if(score=== "1/5" || "2/5" || "3/5" || "4/5" || "5/5"){
+        function Store(event){
+            event.preventDefault()
+            var score = prompt ("Enter your score. (ex: 4/5):")
                 console.log(score);
-                localStorage.setItem("score", JSON.stringify(score))
-        }}
-    var initials = prompt ("Enter your first and last name initials without using periods. (Ex: TJ)")
-        console.log(initials);
-        localStorage.setItem("initials", JSON.stringify(initials))
-    }
-    store.addEventListener("click", Store);
+                    localStorage.setItem("score", JSON.stringify(score))
+            while(score === ""){
+                alert("You must enter your score.")
+                score = prompt ("Enter your score. (Ex: 4/5):")
+                    console.log(score);
+                    localStorage.setItem("score", JSON.stringify(score))
+            }
+            var initials = prompt ("Enter your first and last name initials without using periods. (Ex: TJ)");
+                console.log(initials);
+                localStorage.setItem("initials", JSON.stringify(initials));
+        }
+            store.addEventListener("click", Store)
 
-   
     
     
-    quizOfficial(questions, quizContainer);
- 
+        quizOfficial(questions, quizContainer); 
+    
     
 }
 

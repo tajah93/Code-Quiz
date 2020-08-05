@@ -54,8 +54,8 @@
   background-color: #66FCF1;
   border-radius: 15px;
   display: block;
-margin: 0 auto;
-margin-top: 10px;
+  margin: 0 auto;
+  margin-top: 10px;
 
 }
 
@@ -64,4 +64,20 @@ margin-top: 10px;
   
 }
 
+#count {
+  color: rgba(226, 226, 226, 0.801); 
+  margin-left: 40px;
+  margin-right: 60px;
+  padding-left: 40px;
+  font-size: 25px;
+  font-family: 'Passion One', cursive, sans-serif;
+}
+ #results{
+  color:  #66FCF1;
+  margin-left: 40px;
+  margin-right: 60px;
+  padding-left: 40px;
+  font-size: 25px;
+  font-family: 'Passion One', cursive, sans-serif;
+ }
 
