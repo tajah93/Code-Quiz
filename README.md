@@ -11,3 +11,6 @@ The task was to create a timed quiz using JavaScript fundamentals. Once the user
 * Colors to show right and wrong answers
 * Mobile responsive
 * Decreasing time from timer depicted 
+
+## Images ##
+ https://raw.github.com/tajah93/code-quiz/master/{PATH}
