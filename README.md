@@ -13,4 +13,4 @@ The task was to create a timed quiz using JavaScript fundamentals. Once the user
 * Decreasing time from timer depicted 
 
 ## Images ##
-![ScreenShot](https://raw.github.com/tajah93/code-quiz/master/Images/Screen_Shot_2020-08-04_at_11.39.16.PM.png) 
+![ScreenShot](https://raw.github.com/tajah93/code-quiz/master/Images/Screen-Shot-2020-08-04-at-11.39.16.PM.png) 
