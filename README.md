@@ -21,7 +21,7 @@ The task was to create a timed quiz using JavaScript fundamentals. Once the user
 
 ![ScreenShot](https://raw.github.com/tajah93/code-quiz/master/Images/Submission.png)
 
-
+ 
 ![ScreenShot](https://raw.github.com/tajah93/code-quiz/master/Images/Submission_Mobile.png)
 
 
